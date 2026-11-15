@@ -47,7 +47,7 @@ jobs:
   build:
     needs: test-matrix
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         os: ${{ fromJSON(needs.test-matrix.outputs.targets) }}
     runs-on: ${{ matrix.os }}
@@ -79,7 +79,7 @@ jobs:
     name: Unit Tests
     needs: test-matrix
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         os: ${{ fromJSON(needs.test-matrix.outputs.targets) }}
     runs-on: ${{ matrix.os }}
